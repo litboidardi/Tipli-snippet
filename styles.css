@@ -93,6 +93,7 @@ a:-webkit-any-link {
     color: var(--Grey-2, #AEAEAE);
 }
 
+.signup__underblock-text2-hyperlink:visited,
 .signup__underblock-text2-hyperlink:link {
     color: var(--Grey-2, #AEAEAE);
     text-decoration-line: underline;
@@ -102,6 +103,7 @@ a:-webkit-any-link {
     color: var(--Grey-0, #54565A);
 }
 
+.signup__underblock-text3-hyperlink:visited,
 .signup__underblock-text3-hyperlink:link{
     color: var(--Orange, #EC7700);
     text-decoration-line: underline;
