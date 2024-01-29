@@ -19,13 +19,15 @@ body {
 }
 
 a:-webkit-any-link {
-    color: -webkit-link;
     cursor: pointer;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .navbar__logout-login {
     border: 1px solid var(--Grey-0, #54565A);
+    color: #000;
+    cursor: pointer;
+    background: transparent;
 }
 
 .navbar__logout-signup {
@@ -78,6 +80,7 @@ a:-webkit-any-link {
 .signup__submit-btn {
     background: var(--Orange-Gradient, radial-gradient(652.15% 474.45% at 26.41% 0.85%, #EB7701 0%, #F27C03 100%));
     color: var(--White, #FFF);
+    cursor: pointer;
 }
 
 .signup__underblock-text1 {
@@ -109,7 +112,20 @@ a:-webkit-any-link {
     text-decoration-line: underline;
 }
 
-@media screen and (min-width: 768px){
+@media screen and (min-width: 1441px) {
+    .navbar__line {
+        background-color: #FFFFFF;
+    }
+    .navbar__container {
+        max-width: 80%;
+    }
+    .navbar {
+        border-bottom: 0 ;
+    }
+
+}
+
+@media screen and (min-width: 768px) {
     .page {
         height: 705px;
         width: 1400px;
@@ -129,7 +145,7 @@ a:-webkit-any-link {
         position: fixed;
         width: 100%;
         top: 0;
-        z-index: 9999;
+        z-index: 2;
     }
 
     .navbar {
@@ -470,6 +486,7 @@ a:-webkit-any-link {
         align-items: center;
         gap: 16px;
         border-radius: 3px;
+        cursor: pointer;
     }
 
     .signup__social-btn--apple {
@@ -519,6 +536,184 @@ a:-webkit-any-link {
         display: block;
         bottom: 50px;
     }
+    .modal {
+        display:none;
+        position: fixed; /* Stay in place */
+        z-index: 3; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        align-content: center;
+        align-items: center;
+        pointer-events: none;
+    }
+    .modal.show {
+        pointer-events: auto;
+        display: block;
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        border-radius: 8px;
+        margin: 4% auto; /* 15% from the top and centered */
+        border: 1px solid #888;
+        width: 80%; /* Could be more or less, depending on screen size */
+    }
+
+    .modal-close {
+        height: auto;
+        position: relative;
+        right: 20px;
+        top: 10px;
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .modal-content__title {
+        height: 50px;
+        margin-top: 35px;
+        position: relative;
+        text-align: center;
+        font-weight: 700;
+        font-family: 'Roboto', sans-serif;
+        font-size: 30px;
+        color: var(--Grey-0, #54565A);
+    }
+
+    .modal-content__body {
+        display:flex;
+        flex-direction: row;
+        border-top: 1px solid #b6b6b6;
+        background-color: #ececec;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+        padding: 20px 40px;
+    }
+    .modal-content__body-left {
+        margin-left: 70px;
+        width: 360px;
+    }
+
+    .modal-content__form {
+        display:flex;
+        flex-direction: column;
+        gap: 8px;
+
+    }
+
+    .modal-content__form input {
+        height: 50px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        border-radius: 4px;
+        border: 1px solid #54565A;
+        padding: 2px 13px;
+    }
+
+    .modal-content__form button {
+        height: 50px;
+        color: #FFFFFF;
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        background-color: #61A60E;
+        border: 0;
+        border-radius: 4px;
+        margin-top: 8px;
+        cursor: pointer;
+    }
+
+    .modal-content__choice {
+        text-align: center;
+        padding: 15px;
+        color: #54565A;
+    }
+
+    .modal-content__socials {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+
+    }
+
+    .modal-content__social-btn {
+        border-radius: 4px;
+        height: 45px;
+        width: 250px;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .modal-content__social-btn--apple {
+        background-color: #000000;
+        border: 1px solid #000000;
+    }
+
+    .modal-content__social-btn--facebook {
+        background-color: #1877F2;
+        border: 1px solid #1877F2;
+    }
+
+    .modal-content__social-btn--google {
+        border: 1px solid #b6b6b6;
+    }
+
+    .modal-content__lost-password {
+        background-color: #ececec;
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+
+    .modal-content__lost-password a {
+        color: #000000;
+        text-decoration: underline;
+    }
+
+    .modal-content__body-right {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        gap: 15px;
+    }
+    .modal__create-account--button {
+        height: 50px;
+        border-radius: 4px;
+        border: 0;
+        background-color: var(--Orange, #EC7700);
+        color: #FFFFFF;
+        font-size: 20px;
+        font-weight: 300;
+        cursor: pointer;
+    }
+
+    .modal__create-account--text {
+        font-size: 30px;
+    }
+
+    .modal-content__social-btn-text {
+        color: #FFFFFF;
+        padding: 0 8px;
+        text-align: left;
+        font-weight: 500;
+        font-size: 14px;
+
+    }
+
+    .modal-content__social-btn-text--black {
+        color: #000000;
+    }
 }
 
 @media (min-height: 760px) {
@@ -529,6 +724,10 @@ a:-webkit-any-link {
 }
 
 @media (max-width: 430px) {
+    .modal {
+        display: none;
+    }
+
     body {
         margin: 0;
         height: 927.52px;
@@ -538,8 +737,8 @@ a:-webkit-any-link {
         align-items: flex-start;
     }
     * {
-    width: auto;
-    height: auto;
+        width: auto;
+        height: auto;
     }
 
     .header {
@@ -726,7 +925,6 @@ a:-webkit-any-link {
         justify-content: center;
         align-items: center;
         gap: 10px;
-        top: 0;
         border-radius: 4px;
         border: 2px solid var(--Green, #61A60E);
         background: var(--White, #FFF);
@@ -893,7 +1091,7 @@ a:-webkit-any-link {
         display: flex;
         align-items: flex-start;
         gap: 12px;
-        border-radius: 0px 6px 6px 0px;
+        border-radius: 0 6px 6px 0;
     }
 
     .cashback__rating-left {
