@@ -116,9 +116,7 @@ a:-webkit-any-link {
     .navbar__line {
         background-color: #FFFFFF;
     }
-    .navbar__container {
-        max-width: 80%;
-    }
+    
     .navbar {
         border-bottom: 0 ;
     }
